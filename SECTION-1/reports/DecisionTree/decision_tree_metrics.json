@@ -1,0 +1,17 @@
+{
+    "model": "Decision Tree",
+    "best_parameters": {
+        "criterion": "entropy",
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "min_samples_split": 2
+    },
+    "best_cv_score": 0.794486582848796,
+    "accuracy": 0.7956062176165803,
+    "weighted_precision": 0.7994659002966897,
+    "weighted_recall": 0.7956062176165803,
+    "weighted_f1": 0.7974138110160867,
+    "macro_precision": 0.3216701836920642,
+    "macro_recall": 0.3259500606288135,
+    "macro_f1": 0.3226527958407039
+}
