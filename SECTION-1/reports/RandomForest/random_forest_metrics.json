@@ -1,0 +1,18 @@
+{
+    "model": "Random Forest",
+    "best_parameters": {
+        "n_estimators": 50,
+        "min_samples_split": 20,
+        "min_samples_leaf": 8,
+        "max_depth": 20
+    },
+    "best_cv_score": 0.5627117948526908,
+    "accuracy": 0.5506321243523316,
+    "weighted_precision": 0.7343756075786941,
+    "weighted_recall": 0.5506321243523316,
+    "weighted_f1": 0.5659663480289409,
+    "macro_precision": 0.20487560038595132,
+    "macro_recall": 0.43390153939766446,
+    "macro_f1": 0.2377454906901615,
+    "tuning_time_seconds": 27.340360403060913
+}
