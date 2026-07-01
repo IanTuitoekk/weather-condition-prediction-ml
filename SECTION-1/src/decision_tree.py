@@ -1,11 +1,3 @@
-"""
-Member 5 - Decision Tree Model
-
-Trains and evaluates a Decision Tree classifier,
-performs hyperparameter tuning, visualizes the tree,
-and saves all required outputs.
-"""
-
 import json
 from pathlib import Path
 
@@ -25,9 +17,8 @@ from sklearn.model_selection import GridSearchCV, StratifiedKFold
 from sklearn.preprocessing import LabelEncoder
 
 
-# =====================================
 # Configuration
-# =====================================
+
 
 RANDOM_STATE = 42
 
@@ -40,9 +31,7 @@ MODELS_DIR.mkdir(parents=True, exist_ok=True)
 REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# =====================================
 # Load datasets
-# =====================================
 
 print("Loading datasets...")
 
@@ -61,9 +50,7 @@ print(f"X_train: {X_train.shape}")
 print(f"X_test : {X_test.shape}")
 
 
-# =====================================
 # Encode labels
-# =====================================
 
 encoder = LabelEncoder()
 
@@ -71,9 +58,8 @@ y_train_encoded = encoder.fit_transform(y_train)
 y_test_encoded = encoder.transform(y_test)
 
 
-# =====================================
 # Hyperparameter tuning
-# =====================================
+
 
 print("\nPerforming hyperparameter tuning...")
 
@@ -118,10 +104,8 @@ print(
     f"{grid_search.best_score_:.4f}"
 )
 
-
-# =====================================
 # Train final model
-# =====================================
+
 
 print("\nTraining final model...")
 
@@ -131,18 +115,15 @@ best_model.fit(
 )
 
 
-# =====================================
 # Predictions
-# =====================================
+
 
 print("Generating predictions...")
 
 y_pred = best_model.predict(X_test)
 
 
-# =====================================
 # Metrics
-# =====================================
 
 accuracy = accuracy_score(
     y_test_encoded,
@@ -173,10 +154,7 @@ print(f"Accuracy: {accuracy:.4f}")
 print(f"Weighted F1: {weighted_f1:.4f}")
 print(f"Macro F1: {macro_f1:.4f}")
 
-
-# =====================================
 # Classification report
-# =====================================
 
 report = classification_report(
     y_test_encoded,
@@ -192,9 +170,8 @@ pd.DataFrame(report).transpose().to_csv(
 )
 
 
-# =====================================
 # Confusion matrix
-# =====================================
+
 
 cm = confusion_matrix(
     y_test_encoded,
@@ -231,9 +208,7 @@ plt.savefig(
 plt.close()
 
 
-# =====================================
 # Tree visualization
-# =====================================
 
 print("Generating tree visualization...")
 
@@ -263,9 +238,8 @@ plt.savefig(
 plt.close()
 
 
-# =====================================
 # Save predictions
-# =====================================
+
 
 predictions = pd.DataFrame(
     {
@@ -282,9 +256,8 @@ predictions.to_csv(
 )
 
 
-# =====================================
 # Save model
-# =====================================
+
 
 joblib.dump(
     best_model,
@@ -299,9 +272,7 @@ joblib.dump(
 )
 
 
-# =====================================
 # Save metrics
-# =====================================
 
 metrics = {
     "model": "Decision Tree",
@@ -336,10 +307,8 @@ with open(
         indent=4,
     )
 
-
-# =====================================
 # Markdown report
-# =====================================
+
 
 report_text = f"""
 # Member 5 - Decision Tree Report
