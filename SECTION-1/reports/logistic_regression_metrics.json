@@ -1,0 +1,36 @@
+{
+    "model": "Logistic Regression",
+    "solver": "saga",
+    "penalty": "l2",
+    "class_weight": "balanced",
+    "maximum_iterations": 200,
+    "iterations_used": 200,
+    "training_rows": 96500,
+    "testing_rows": 24125,
+    "number_of_features": 210,
+    "number_of_classes": 46,
+    "accuracy": 0.4135958549222798,
+    "weighted_precision": 0.6537928551028425,
+    "weighted_recall": 0.4135958549222798,
+    "weighted_f1_score": 0.44005098477139876,
+    "macro_precision": 0.13877820566264537,
+    "macro_recall": 0.2901895195963906,
+    "macro_f1_score": 0.14751812772680897,
+    "micro_roc_auc": 0.9512883067357514,
+    "macro_roc_auc": 0.9172320241668543,
+    "micro_average_precision": 0.44474483814103355,
+    "cross_validation_f1_scores": [
+        0.4537185116981069,
+        0.4444262938339399,
+        0.4473304851999985
+    ],
+    "mean_cross_validation_f1": 0.44849176357734843,
+    "cross_validation_f1_std": 0.003881387536355305,
+    "cross_validation_time_seconds": 68.61951429996407,
+    "training_time_seconds": 32.90830360003747,
+    "prediction_time_seconds": 0.08675419999053702,
+    "cv_classes_excluded": [
+        "Moderate Or Heavy Snow In Area With Thunder",
+        "Patchy Snow Nearby"
+    ]
+}
